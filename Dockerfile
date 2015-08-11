@@ -12,7 +12,9 @@ RUN sudo add-apt-repository "deb http://dl.hhvm.com/ubuntu $(lsb_release -sc) ma
 
 RUN sudo apt-get update
 RUN sudo apt-get install hhvm -y
-
+sudo update-rc.d hhvm defaults
+sudo /usr/bin/update-alternatives --install /usr/bin/php php /usr/bin/hhvm 60
+EXPOSE 9000
 CMD ["hhvm"]
 
 
