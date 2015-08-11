@@ -15,7 +15,7 @@ RUN sudo apt-get install hhvm -y
 RUN sudo update-rc.d hhvm defaults
 RUN sudo /usr/bin/update-alternatives --install /usr/bin/php php /usr/bin/hhvm 60
 EXPOSE 9000
-CMD ["hhvm","--mode=server"]
+CMD ["hhvm","--mode daemon"]
 
 
 
